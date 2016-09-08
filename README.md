@@ -160,6 +160,15 @@ Reference for backup to S3 bucket
 https://www.drupal.org/node/2465951
 <br>
 
+S3 bucket name is cc2016test
+
+Following schedules are created and the output verified.
+- weekly-for-cc2016test
+- civicrm_database_every3hour
+- drupal_database_every_hour
+- files_daily
+
+
 My created user for backup. 
 <br>
 ccbackup_user
