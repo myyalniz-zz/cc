@@ -11,3 +11,8 @@ sudo mkdir files
 sudo chown -R www-data files
 sudo cp default.settings.php settings.php
 sudo chmod 777 settings.php
+
+mkdir /mnt/private_file_folder
+chowm -R www-data: /mnt/private_file_folder
+chowm -R www-data: /var/share/nginx/html
+
