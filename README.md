@@ -91,55 +91,89 @@ table prefix : cvc_
 <br>
 
 cd /usr/share/nginx
+<br>
 rm -rf html
+<br>
 sudo wget https://ftp.drupal.org/files/projects/drupal-7.38.tar.gz
+<br>
 sudo tar -xvzf drupal-7.38.tar.gz
+<br>
 sudo sudo mv drupal-7.38 html
+<br>
+<br>
 
 cd /usr/share/nginx/html/sites/default
+<br>
 sudo mkdir files
+<br>
 sudo chown -R www-data files
+<br>
 sudo cp default.settings.php settings.php
+<br>
 sudo chmod 777 settings.php
+<br>
 
 Change server in upstream to 
+<br>
 unix:/var/run/php5-fpm.sock;
+<br>
 
 Admin Username : civicrm_admin
+<br>
 Admin Password : C1v1crmAdm1n!
+<br>
 
 sudo bash drush_install.sh
+<br>
 sudo apt-get install git-all
+<br>
 
 mkdir /mnt/private_file_folder
+<br>
 chowm -R www-data: /mnt/private_file_folder
+<br>
 chowm -R www-data: /var/share/nginx/html
+<br>
 
 
 Location of civiCRM https://download.civicrm.org/civicrm-4.7.10-drupal.tar.gz
+<br>
 install module in modules page of drupal
 
+<br>
 GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, INDEX, ALTER, CREATE TEMPORARY TABLES, LOCK TABLES, TRIGGER, CREATE ROUTINE, ALTER ROUTINE ON civicrm.* TO 'civicrm_user'@'localhost' IDENTIFIED BY 'cvcrm2016';
 
+<br>
 GRANT SELECT on drupal_cvc.* to 'civicrm_user'@'localhost' ;
 
+<br>
 installed from /sites/all/modules/civicrm/install/index.php
 
 
+<br>
 http://52.72.130.54/civicrm/admin/setting/uf?reset=1
 
-# References consulted.
+References consulted.
+<br>
 https://github.com/puppetlabs/puppetlabs-aws
+<br>
 https://puppet.com/blog/provision-aws-infrastructure-using-puppet
+<br>
 https://www.digitalocean.com/community/tutorials/how-to-install-puppet-4-in-a-master-agent-setup-on-ubuntu-14-04
+<br>
 https://www.digitalocean.com/community/tutorials/how-to-install-puppet-4-in-a-master-agent-setup-on-ubuntu-14-04
+<br>
 
 
 Reference for backup to S3 bucket
+<br>
 https://www.drupal.org/node/2465951
+<br>
 
 My created user for backup. 
+<br>
 ccbackup_user
 
+<br>
 
 
