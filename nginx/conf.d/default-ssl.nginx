@@ -10,6 +10,15 @@ server {
 
     root /usr/share/nginx/html;
     index index.php;
+
+    location ~ ^/sites/.*/files/civicrm/(ConfigAndLog|upload|templates_c) {
+      deny all;
+    }
+
+    location ~ ^/sites/default/files/civicrm/custom/.* {
+      deny all;
+    }
+
  
 ## serve imagecache files directly or redirect to drupal if they do not exist.
     location ~* files/styles {
