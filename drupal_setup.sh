@@ -16,3 +16,4 @@ mkdir /mnt/private_file_folder
 chowm -R www-data: /mnt/private_file_folder
 chowm -R www-data: /var/share/nginx/html
 
+/bin/sed -i -e 's/memory_limit = 128M/memory_limit = 512M/g' /etc/php5/fpm/php.ini
