@@ -1,15 +1,5 @@
 # cc
 
-The site has a DNS: http://www.cc2016test.com
-<br>
-It is redirected permanent to https://www.cc2016test.com
-<br>
-The Elastic IP assigned is 52.72.130.54
-<br>
-
-The key for ubuntu user is cc-test.pem and will be shared.
-<br>
-
 CC drupal and CiviCRM integration site
 <br>
 sudo apt-get update
