@@ -175,4 +175,15 @@ ccbackup_user
 
 <br>
 
+<br>
+Certificates generated using
+<br>
+sudo openssl req -x509 -nodes -days 365 -newkey rsa:4096 -keyout /etc/nginx/ssl/cc2016test.key -out /etc/nginx/ssl/cc2016test.crt
+<br>
 
+<br>
+
+The following line has been added in file /etc/cron.d/civicrm
+<br>
+*/10 * * * *    www-data    drush -r /usr/share/nginx/html -l https://www.cc2016test.com -u 1 civicrm-api job.execute auth=0 --out=json
+<br>
