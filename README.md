@@ -1,57 +1,94 @@
 # cc
 
 The site has a DNS: http://www.cc2016test.com
+<br>
 It is redirected permanent to https://www.cc2016test.com
+<br>
 The Elastic IP assigned is 52.72.130.54
+<br>
 
 The key for ubuntu user is cc-test.pem and will be shared.
+<br>
 
 CC drupal and CiviCRM integration site
+<br>
 sudo apt-get update
+<br>
 
 cd /tmp/ && wget http://nginx.org/keys/nginx_signing.key
+<br>
 sudo apt-key add nginx_signing.key
+<br>
 
 sudo vi /etc/apt/sources.list.d/nginx.list
+<br>
 deb http://nginx.org/packages/mainline/ubuntu/ trusty nginx
+<br>
 deb-src http://nginx.org/packages/mainline/ubuntu/ trusty nginx
+<br>
 
 sudo apt-get update && sudo apt-get install nginx
+<br>
 
 
-# This step is then corrected in puppet code. Originally placed in sites-available and linked in sites-enabled
+This step is then corrected in puppet code. Originally placed in sites-available and linked in sites-enabled
+<br>
 Change /etc/nginx/conf.d/default.nginx.conf
+<br>
 Change /etc/nginx/conf.d/default-ssl.nginx.conf
+<br>
 
-# In current site 
+In current site 
+<br>
 Change /etc/nginx/sites-available/default
+<br>
 ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
+<br>
 
+<br>
 Change /etc/nginx/sites-available/default-ssl
+<br>
 ln -s /etc/nginx/sites-available/default-ssl /etc/nginx/sites-enabled/default-ssl
 
+<br>
 sudo add-apt-repository ppa:ondrej/php5
+<br>
 sudo apt-get install python-software-properties
+<br>
 sudo apt-get install php-pear php5 php5-cli php5-common php5-curl php5-fpm php5-gd php5-json php5-mcrypt php5-mysql php5-readline
+<br>
 
 sudo apt-get install mysql-server mysql-client
+<br>
 
 mysql server root password is "123456"
+<br>
 
-# References consulted.
+References consulted.
+<br>
 https://wiki.civicrm.org/confluence/display/CRMDOC/CiviCRM+PHP+Requirements
+<br>
 https://wiki.civicrm.org/confluence/display/CRMDOC/Installation+and+Upgrades
+<br>
 http://redcrackle.com/blog/how-install-drupal-7-nginx-php-fpm-and-mysql-ubuntu-1404
+<br>
 https://www.liberiangeek.net/2014/10/install-latest-version-nginx-ubuntu-14-10/
+<br>
 https://www.dev-metal.com/how-to-setup-latest-version-of-php-5-5-on-ubuntu-12-04-lts/
+<br>
 
 
 create database drupal_cvc;
+<br>
 create user 'drupaluser_cvc'@'localhost' identified by 'drplcvc2016';
+<br>
 use drupal_cvc;
+<br>
 grant all on drupal_cvc.* to 'drupaluser_cvc'@'localhost';
+<br>
 
 table prefix : cvc_
+<br>
 
 cd /usr/share/nginx
 rm -rf html
